@@ -448,6 +448,15 @@ public class RangeSeekBar extends View {
         return new SeekBarState[]{leftSeekBarState, rightSeekBarState};
     }
 
+    public float getLeftValue() {
+        float range = maxProgress - minProgress;
+        return minProgress + range * leftSB.currPercent;
+    }
+
+    public float getRightValue() {
+        float range = maxProgress - minProgress;
+        return minProgress + range * rightSB.currPercent;
+    }
 
     @Override
     public void setEnabled(boolean enabled) {
